@@ -1,14 +1,14 @@
-## Local Livlihood Differences in Mataban, Somalia
+## Local Livelihood Differences in Mataban, Somalia
 
 Present research findings to better understand humanitarian and labor
 needs in Somalia.
 
 ### Description
 
-This is a poster presentation on differentiated livlihood outcomes
+This is a poster presentation on differentiated livelihood outcomes
 across four villages in Mataban district in central Somalia. It provides
 insight into conflict and climate affected communities using survey data
-and statistical analysis.
+and statistical analysis. I used `posterdown::posterdown_betterport` to generate HTML conference poster.
 
 ### Analysis
 
@@ -17,7 +17,7 @@ and statistical analysis.
 - **Data:** IOM Community Stabilization Index (COSI) survey for Mataban
 - **Statistical test:** chi-square (Χ<sup>2</sup>) test of independence
 
-### Background Resources
+### Background References
 
 - [Community Stabilization](https://somalia.iom.int/community-stabilization)
 - Communities affected by [Conflict and Climate change](https://somalia.iom.int/news/new-iom-and-eu-project-targets-somali-communities-affected-conflict-and-climate-change)

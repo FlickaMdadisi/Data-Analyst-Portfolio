@@ -4,7 +4,7 @@
 
 Hello! I am an aspiring data analyst and international development practitioner studying at American University. Currently, I am developing my technical and analytical proficiency using *R programming language.* The deliverables I produced as part of my graduate Data Analysis course demonstrate my ability to manipulate large quantitative data and generate high quality reports that communicate critical information.
 
-To learn more, please refer to my [resume](https://github.com/FlickaMdadisi/Data-Analyst-Portfolio/blob/main/ResumeMC.pdf).
+To learn more, please refer to my [resume](https://github.com/FlickaMdadisi/Data-Analyst-Portfolio/blob/main/resume_pdf.pdf).
 
 This repository serves to showcases my skills and share projects in Data Analytics. 
 

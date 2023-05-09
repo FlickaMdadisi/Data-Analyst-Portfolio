@@ -1,0 +1,179 @@
+---
+title: "FlickaMdadisi's resume"
+author: FlickaMdadisi
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+# uncomment this line to produce HTML and PDF in RStudio:
+#knit: pagedown::chrome_print
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+```{css}
+
+:root{
+  --sidebar-width: 12rem; /* side bar width */
+  --sidebar-background-color: #FFDEAD;
+  --decorator-border: 2px solid #FFDEAD; /* change color and thickness of timeline */
+
+}
+
+.decorator::after{
+  background-color: #FFDEAD; /* change color timeline dots */
+
+}
+
+/* Define the font family here */
+body{
+  font-family: Arial, sans-serif;
+
+}
+
+```
+
+Aside
+================================================================================
+
+
+![Initials](https://api.dicebear.com/6.x/initials/svg?seed=MC&backgroundColor=transparent&fontSize=71&fontWeight=500){width=80%}
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> flicka@outlook.com
+- <i class="fa fa-github"></i> [github.com/FlickaMdadisi](https://github.com/FlickaMadadisi)
+- <i class="fa fa-phone"></i> +1 301-785-2003
+- For more information, please contact me via email.
+
+
+Skills {#skills}
+-------------------------------------------------------------------------------
+
+- Experienced in statistical analysis and data visualization in R and Tableau
+
+- R and Python Language - data cleaning, munging, and wrangling
+
+- Highly skilled in utilizing **dply**, **tidyr**, **kableExtra**, and **ggplot2** packages and **RMarkdown** documents
+
+- Advanced organizational proficiency in Microsoft Excel, SharePoint, and Salesforce
+
+- Languages: fluent Amharic, intermediate French, conversational Spanish
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+Main
+================================================================================
+
+Melonie Croft {#title}
+--------------------------------------------------------------------------------
+
+### Currently searching for a Data Analysit position
+
+Dynamic data analyst with growing fluency in R, Python, and Tableau. Demonstrated ability to prepare and analyze data, while providing actionable insight through statistical analysis. Adept at leveraging critical thinking,visualization, and communication skills to effectively present findings to a wide range of audiences. 
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### American University
+
+M.A. in International Development
+
+Washington, DC
+
+May 2023
+
+Relevant Courses:
+
+- *Data Analysis*
+- *Statistics, Research Design, and Research Methods*
+
+### University Maryland, Baltimore County
+
+B.A. in Political Science
+
+Baltimore, Maryland
+
+2020
+
+Minor: Africana Studies
+
+Certificate: French
+
+
+Projects {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+### Data Analysis and Visualization 
+
+American University
+
+Washington, DC
+
+2023
+
+- Produced an audio-visual PowerPoint presentation exploring conflict-climate migration. Generated multiple plots using *patchwork*. 
+- Analyzed "Urban Social Disorder" data to understand mobilization and violence trends in the Global South. Created a professional slide deck using *RMarkdown* and *Xaringan* library.
+- Performed chi-squared statistical analysis to assess the relationship between villages and livelihood outcomes in Somalia. Presented findings in *posterdown* in *RMarkdown* and utilized *kableExtra* and *tidyverse* packages to generate highly customized tables and graphic visualizations. 
+
+### Codebook
+
+American University
+
+Washington, DC
+
+2023
+
+- Cleaned, appended, and reshaped large data set on "Sexual Violence in Armed Conflict" to produce a codebook that clearly communicates the contents, structure, and layout of the data.
+
+### Statistical Analysis
+
+American University
+
+Washington, DC
+
+2022
+
+- Generated and presented multivariate regression analysis on the gendered impact of brain drain in international migration using R Studio.
+  
+
+Professional Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### Program Associate, intern
+
+Horn of Africa Youth Network
+
+Nairobi, Kenya
+
+2022
+
+::: concise
+- Cleaned and analyzed raw survey data to inform programming on youth economic empowerment initiatives. 
+- Led projects to collect and synthesize global migration policy documents.
+- Ensured team workflow efficiency by managing internal tracking system of client deliverables and donor requirements.
+:::
+
+### Records Specialist
+
+City of Takoma Park
+
+Takoma Park, Maryland
+
+2021 - 2022
+
+::: concise
+- Effectively managed Maryland Public Information Act (MPIA) records and requests.
+- Generated a report analyzing information and records management metrics to improve performance.
+- Searched, identified, and exported data utilizing Google Vault.
+- Streamlined records inventory system and data entry using Excel Macros.
+:::

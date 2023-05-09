@@ -1,16 +1,15 @@
 ## Local Livelihood Differences in Mataban, Somalia
 
-Present research findings to better understand humanitarian and labor
-needs in Somalia.
+Present research analysis and findings to better understand humanitarian and labor needs in Somalia.
 
 ### Description
 
 This is a poster presentation on differentiated livelihood outcomes
 across four villages in Mataban district in central Somalia. It provides
 insight into conflict and climate affected communities using survey data
-and statistical analysis. I used `posterdown::posterdown_betterport` to generate HTML conference poster.
+and statistical analysis. `posterdown::posterdown_betterport` in RStudio was used to generate this HTML conference poster in R Studio.
 
-### Analysis
+### Analysis Overview
 
 - **Research Question:** Is there a relationship between different villages in the
   region and livelihood outcomes?

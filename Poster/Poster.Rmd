@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 main_topsize: 0.2 #percent coverage of the poster
 main_bottomsize: 0.1 #ESSENTIALS
@@ -201,4 +202,209 @@ A more detailed look in **Figure 2** shows that Mataban Town has the highest sha
 
 # Conclusion
 
+=======
+---
+main_topsize: 0.2 #percent coverage of the poster
+main_bottomsize: 0.1 #ESSENTIALS
+title: '**Local Livlihood Differences in Mataban, Somalia**'
+author:
+  - name: '**Mahelet Gennene**'
+    affil: 1
+    main: true
+    orcid: '0000-0002-1099-3857'
+    email: mg7570a@american.edu
+affiliation:
+  - num: 1
+    address: SIS, American University
+main_findings:
+  - "Understanding livlihood outcomes are diffrentiated across four villages in Mataban District of Somalia:"
+  - "a path towards reslience in climate and conflict affected communities"
+primary_colour: "#FF9966"
+secondary_colour: "#FF9933"
+accent_colour: "#FF9900"
+output: 
+  posterdown::posterdown_betterport:
+    self_contained: false
+    pandoc_args: --mathjax
+    number_sections: false
+link-citations: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+```{r setup, include=FALSE}
+# packages
+  library(tidyverse)
+  library(dplyr)
+  library(ggplot2)
+  library(scales)
+  library(haven)
+  library(readxl)
+  library(knitr)
+  library(kableExtra)
+  library(RColorBrewer)
+
+getwd()
+setwd("C:/Users/mg/Desktop/American University/Data Analysis - SIS 750/Poster")
+
+# import data
+  COSI = read_excel("C:/Users/mg/Desktop/American University/Data Analysis - SIS 750/Poster/COSI_original.xlsx", sheet = "Sheet1")
+
+# subset data based on variables of interest
+  df = COSI %>% 
+    select(location, clan_clean, emp_status) %>% 
+    rename(clan = clan_clean) 
+```
+
+# Introduction
+
+Livelihood choices and opportunities are constrained by vulnerabilities to climate change and conflict in Somalia. The International Organization on Migration (IOM) cites extreme weather patterns such as droughts and floods intensifying conflict over scarce resources between communities. An assessment of differences of livelihood outcomes across conflict and climate risk prone regions within Mataban District of Hirshabelle state in Somalia is important for building resilience and mitigating displacement.
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+# Objectives
+
+1. Better understand locally the factors that influence livelihoods in Hirshabelle state of Somalia
+2. Inform a comparative location report for IOM humanitarian and labor needs programming 
+3. *Question: Is there a relationship between different villages in the region and livelihood outcomes?*
+
+# Hypothesis
+
+Ho: the proportion of people from each village is independent of livelihood outcome measured by employment status
+
+Ha: the proportion of people from each villages is different for various livelihood outcomes measured by employment status
+
+# Methods 
+
+The data is derived from the IOM Somalia's COSI 2.0 Mataban dataset. The survey for COSI (Community Stabilization Index) was piloted by IOM Somalia in September of 2022 across four locations of Somalia's Mataban district: Mataban Town, Beer-Gadid, Qodqod, and Takaraale. Data collection methods include community mapping and qualitative surveys of randomly sampled respondents above 18 years old.
+
+- 1474 observations, 381 variables
+- 2 catgorical variables of interest
+    - Exposure: **location** - 4 villages/towns in Mataban district
+    - Outcome:**employment status** -  response to "What is your employment status?"
+    
+### Data Analysis Plan
+
+- Descriptive statistics: highlight characteristics of data through relative frequency distributions of each variable
+
+- Statistical tests: a chi-square (Χ<sup>2</sup>) test of independence to test the hypothesis of whether two categorical variables are related to each other. A significance level (alpha) of 5% is chosen. 
+
+# Results
+
+As part of objectives previously defined, this report presents key findings from the statistical analysis of the data. 
+
+The relative frequency distribution of **Table 1** below reveals that 12.6% of households lived in Qodqod, making it the least populated. In comparison, 39.1% of households reside in Takeraale. There is minor variation in the geographic distribution among the three major villages of Beergadid, Mataban Town, and Takeraale. 
+
+```{r, echo=FALSE, fig.height=6, out.width="80%"}
+
+# CATEGORICAL OUTCOME ------------
+  ## Tabulation ----
+  # relative frequency table
+  t1 = df %>% count(location) %>%
+    na.omit() %>%
+    mutate(percent = n/sum(n) * 100) %>% 
+    kbl(digits = 1L, col.names = c("Location",
+                                   "N",
+                                   "Percent"),
+        caption = "Porportion of Population in Each Village") %>% 
+    kable_classic() %>% 
+    row_spec(0, bold = T)
+  t1
+```
+
+The primary livelihood in Hirshabelle is pastoralism, occupying nearly 50% of residents. Interestingly, out of an estimated 23% of the population who are unemployed, only 2% are not searching for work while the vast majority (21%) are actively searching for employment or livelihood. 
+
+```{r, echo=FALSE, fig.dim = c(8, 6), out.width="100%"}
+# Figure # 1.2 relative frequency table  
+  t2 = df %>% count(emp_status) %>%
+    na.omit() %>%
+    mutate(percent = n/sum(n) * 100) 
+  
+    ggplot(t2, aes(x = emp_status, y = percent)) +
+    geom_col(fill = "#FF9966") +
+    theme_classic() +
+    theme(text = element_text(size = 14)) +
+    labs(subtitle = "Figure 1: Employment Status of Population",
+         x = "Employment Status",
+         y = "Percent") +
+    scale_y_continuous(expand = c(0,0)) +
+    coord_flip()
+```
+
+According to **Table 2**'s Chi squared test of independence below, there is sufficient evidence to reject the null hypothesis that the proportion of people from each village is independent of livelihood outcomes. The probability that we would get a sample with these observed differences of proportions of people in villages and employment status is very small. It is signified by a p-value of 2.2e16 which is nearly zero and less than a significance level of α=0.05. While the type of relationship is not specified, we can conclude that there is an association between location and employment status variables. These results can help target livelihood needs and opportunities across the four villages. For instance, Qodqod which is underrepresented in small-scale businesses may benefit from private sector investment to expand income generating opportunities. 
+
+```{r, echo=FALSE, warning = FALSE, include = TRUE, fig.height=6,out.width="80%"} 
+# raw cross-tabulation
+  tab = df %>% 
+    count(location, emp_status) %>%  # (OutcomeVar, ExposureVar)
+    na.omit() %>% # drop NA cats
+    pivot_wider( # pivot to 2-way
+      names_from = location, # MUST be exposure variable
+      values_from = n, 
+      values_fill = 0
+    )
+  
+# test of independence (chi squared)
+  test = chisq.test(tab[-1])
+  
+# table of cross tabs with chis squared test
+  tab %>%
+    mutate(Total = rowSums(.[-1])) %>% # add total col
+    mutate_at(-1, ~ 100 * ./sum(.)) %>% 
+    kbl(digits = 1L, col.names = c("Employment Status",
+                                               "Beergadid",
+                                               "Mataban Town",
+                                               "Qodqod",
+                                               "Takeraale",
+                                               "Total"),
+        caption = "Employment Status by Villages  - Chi Squared Test of Indpendence") %>% 
+    kable_classic() %>% 
+    row_spec(5:6, bold = T, background = "#FF9966") %>% 
+    footnote(general = "X-squared = 223.06, df = 15, p-value < 2.2e-16",
+             footnote_as_chunk = TRUE,
+             title_format = "bold")
+```
+A more detailed look in **Figure 2** shows that Mataban Town has the highest share of unemployed people, with 36.1% of people seeking work and only 1.6% not seeking work.In contrast, in Takeraale only 8.8% of people report being unemployed despite being the most populated village. Similar to Qodqod, Pastoralism is over represented in Takeraale compared to other livelihood options.
+
+```{r, echo=FALSE, warning = FALSE, fig.height=6,out.width="80%"}
+# graph representing chi squared test
+    t4 = ggplot(data = subset(df, !is.na(emp_status)), 
+              aes(x = emp_status, group = location)) + 
+    geom_bar(aes(y = ..prop.., fill = factor (..x..)), stat="count") + 
+    scale_fill_brewer(palette = "Oranges", labels = c("employed (salaried)",
+                                                      "unemployed (not looking)",
+                                                      "farmer",
+                                                      "unemployed (looking)",
+                                                      "small business owner",
+                                                      "pastoralist")) +
+    scale_y_continuous(labels=scales::percent,
+                       expand = c(0,0)) +
+    theme_minimal() +
+    theme(axis.text.x=element_blank(),
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),
+          axis.line = element_line(colour = "black"),
+          text = element_text(size = 14)) +
+    labs(fill = "Employment Status",
+         subtitle = "Figure 2: Employment Status across Mataban Villages") +
+    ylab("Relative Frequencies") +
+    xlab("Employment Status") +
+    facet_grid(~location)
+    
+    t4
+```
+
+# Conclusion
+
+>>>>>>> 667fb588ed07fdd2062db9501e8d2574bb468ede
 The study reveals that types of livelihoods that exist in Hirshabelle are significantly related across the four villages of Beergadid, Mataban Town, Qodqod, and Takaraale . This could be as a result of potential differences in socio-economic conditions,clan composition, and political instability that contribute to existing climate and conflict risks identified by IOM. Insight into the association between location(villages) and employment status informs our understanding of more granular characteristics in order to develop context specific humanitarian and development programs.
